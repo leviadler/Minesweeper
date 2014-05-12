@@ -20,6 +20,8 @@ class Game
     puts "1) Easy (9x9)"
     puts "2) Intermediate (16x16)"
     puts "3) Expert (16x30)"
+    puts
+    puts "4) Load Previous Game"
     print "==> "
     
     level = gets.chomp.to_i
@@ -64,7 +66,7 @@ class Game
       @game_board.display_board
     end
     
-    if !@game_board.bombed
+    if !@game_board.bombed?
       puts "Yay! :)"
     else
       puts "GAME OVER"
@@ -128,9 +130,13 @@ class Board
     build_board
   end
   
+  def bombed?
+    @bombed
+  end
+  
   def over?
     # over if tile is bomb and revealed
-    @bombed || won?
+    bombed? || won?
     # over if all non-bomb tiles are revealed
   end
   
