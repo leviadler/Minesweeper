@@ -12,15 +12,24 @@ class Board
   
   def build_board
     @board = Array.new(@height) { Array.new(@width)}
-    #@height.times do |x|
     
+    @height.times do |x|
+      @width.times do |y|
+        @board[x][y] = Tile.new([x,y])
+      end
+    end
+    
+    p @board
   end
   
 end
 
 class Tile
-  def initialize
-    
+  
+  attr_reader :coords
+  
+  def initialize(coords)
+    @coords = coords
   end
   
 end
