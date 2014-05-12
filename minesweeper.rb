@@ -1,7 +1,32 @@
 class Game
   def initialize
+    setup_game
+  end
+  
+  def setup_game
+    puts "Please choose difficulty: "
+    puts "1) Easy (9x9)"
+    puts "2) Intermediate (16x16)"
+    puts "3) Expert (16x30)"
+    print "==> "
+    
+    level = gets.chomp.to_i
+    
+    until level > 0 && level < 4
+      puts "Invalid input. Please choose a number between 1-3, inclusive."
+      print "==> "
+      level = gets.chomp.to_i
+    end
+    
+    # We received valid input
+    @game_board = Board.new if level == 1
+    @game_board = Board.new(16,16,40) if level == 2
+    @game_board = Board.new(30,16,99) if level == 3
+    
+    @game_board.display_board
     
   end
+  
 end
 
 class Board
@@ -39,7 +64,7 @@ class Board
     
     set_neighbor_bomb_counts
     
-    display_board
+    #display_board
     
   end
   
@@ -66,7 +91,7 @@ class Board
     
     neighbors.select do |neighbor|
       neighbor.first >= 0 && neighbor.last >= 0 &&
-       neighbor.first < @width && neighbor.last < @height
+       neighbor.first < @height && neighbor.last < @width
     end
     
   end
@@ -77,7 +102,7 @@ class Board
       # stop seeding if all tiles == bombs
       break if bomb_count == @height * @width
       # Get random coordinate
-      x , y = rand(0...@width), rand(0...@height)
+      x , y = rand(0...@height), rand(0...@width)
       unless @board[x][y].bomb?
         @board[x][y].bomb = true
         bomb_count += 1
