@@ -1,9 +1,21 @@
 class Game
+  FLAGGED_ACTION = 2
+  REVEAL_ACTION = 1
+  
   def initialize
-    setup_game
   end
   
   def setup_game
+    level = get_level
+    
+    # We received valid input
+    @game_board = Board.new if level == 1
+    @game_board = Board.new(16,16,40) if level == 2
+    @game_board = Board.new(30,16,99) if level == 3
+    
+  end
+  
+  def get_level
     puts "Please choose difficulty: "
     puts "1) Easy (9x9)"
     puts "2) Intermediate (16x16)"
@@ -12,30 +24,100 @@ class Game
     
     level = gets.chomp.to_i
     
-    until level > 0 && level < 4
+    until level.between?(1,3)
       puts "Invalid input. Please choose a number between 1-3, inclusive."
       print "==> "
       level = gets.chomp.to_i
     end
     
-    # We received valid input
-    @game_board = Board.new if level == 1
-    @game_board = Board.new(16,16,40) if level == 2
-    @game_board = Board.new(30,16,99) if level == 3
-    
+    level
+  end
+  
+  def run
+    setup_game
     @game_board.display_board
+    
+    until @game_board.over?
+      
+      begin
+        row, col = get_user_coords
+      rescue ArgumentError
+        puts "Non-valid input"
+        retry
+      end
+      
+      action = get_user_action
+      
+      if action == FLAGGED_ACTION
+        if @game_board.board[row][col].flagged?
+          @game_board.board[row][col].flagged = false
+        else
+          @game_board.board[row][col].flagged = true
+        end
+      end
+      
+      @game_board.display_board
+    end
     
   end
   
+  def get_user_coords
+    row, col = prompt_for_coords
+    
+    until row.between?(0,@game_board.height-1) &&
+       col.between?(0,@game_board.width-1)
+       puts "Invalid coordinate, please try again:"
+       row, col = prompt_for_coords
+    end
+     
+    if @game_board.board[row][col].revealed?
+      puts "Tile already revealed, please try again:"
+      row, col = prompt_for_coords
+    end
+    
+    [row, col]
+  end
+  
+  def prompt_for_coords
+    puts "Please enter the row of your desired tile:"
+    print "==>"
+    row = Integer(gets.chomp)
+ 
+    puts "Please enter the col of your desired tile:"
+    print "==>"
+    col = Integer(gets.chomp)
+    
+    [row, col]
+  end
+  
+  def get_user_action
+    puts "What action will you perform?\n1) Reveal\n2) Flag\n==>"
+    action = gets.chomp.to_i
+    
+    until action.between?(1,2)
+      puts "Invalid choice. Please enter either 1 or 2."
+      print "==>"
+      action = gets.chomp.to_i
+    end
+    action
+  end
+  
+# end game class
 end
 
 class Board
-  #for testing
-  attr_reader :board
+  
+  attr_reader :board, :height, :width
   
   def initialize(width=9, height=9, total_bombs=10)
     @width, @height, @total_bombs = width, height, total_bombs
     build_board
+  end
+  
+  def over?
+    # over if tile is bomb and revealed
+    # over if all non-bomb tiles are revealed
+    false
   end
   
   def display_board
