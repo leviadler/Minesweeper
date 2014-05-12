@@ -54,10 +54,23 @@ class Game
         else
           @game_board.board[row][col].flagged = true
         end
+      elsif action == REVEAL_ACTION
+        tile = @game_board.board[row][col]
+        tile.revealed = true
+        @game_board.reveal_neighbors(tile)
       end
+        
       
       @game_board.display_board
     end
+    
+    if !@game_board.bombed
+      puts "Yay! :)"
+    else
+      puts "GAME OVER"
+    end
+    
+    @game_board.display_board(true)
     
   end
   
@@ -108,6 +121,7 @@ end
 class Board
   
   attr_reader :board, :height, :width
+  attr_writer :bombed
   
   def initialize(width=9, height=9, total_bombs=10)
     @width, @height, @total_bombs = width, height, total_bombs
@@ -116,15 +130,30 @@ class Board
   
   def over?
     # over if tile is bomb and revealed
+    @bombed || won?
     # over if all non-bomb tiles are revealed
-    false
   end
   
-  def display_board
+  def won?
+    revealed_count == (@width * @height) - @total_bombs
+  end
+  
+  def revealed_count
+    counter = 0
+    @height.times do |x|
+      @width.times do |y|
+        tile = @board[x][y]
+        counter += 1 if tile.revealed? && !tile.bomb?
+      end
+    end
+    counter
+  end
+  
+  def display_board(with_bombs=false)
     #
     @height.times do |x|
       @width.times do |y|
-        print @board[x][y].symbol + ' '
+        print @board[x][y].symbol(with_bombs) + ' '
       end
       print "\n"
     end
@@ -136,7 +165,7 @@ class Board
     # Initialize with tiles and their coordinates
     @height.times do |x|
       @width.times do |y|
-        @board[x][y] = Tile.new([x,y])
+        @board[x][y] = Tile.new([x,y],self)
       end
     end
     
@@ -177,6 +206,30 @@ class Board
     end
     
   end
+
+  def reveal_neighbors(tile)
+    return if tile.neighbor_bomb_count > 0
+    
+    neighbor_queue = tile.neighbors
+    seen_neighbors = [tile.coords]
+    
+    until neighbor_queue.empty?
+      neighbor = neighbor_queue.shift
+      neighbor_tile = @board[neighbor.first][neighbor.last]
+      
+      unless neighbor_tile.bomb?
+        neighbor_tile.revealed = true
+        if neighbor_tile.neighbor_bomb_count == 0
+          new_neighbors = neighbor_tile.neighbors - seen_neighbors
+          neighbor_queue += new_neighbors
+        end
+      end
+      
+      seen_neighbors << neighbor
+      
+    end
+    
+  end
    
   def seed_board
     bomb_count = 0
@@ -212,9 +265,10 @@ class Tile
   
   attr_reader :coords
   attr_accessor :neighbors, :neighbor_bomb_count
-  attr_writer :bomb, :flagged, :revealed
+  attr_writer :bomb, :flagged
   
-  def initialize(coords)
+  def initialize(coords,board)
+    @game_board = board
     @coords = coords
     @bomb = false
     @neighbors = []
@@ -235,14 +289,28 @@ class Tile
     @revealed
   end
   
+  def revealed=(status)
+    @revealed = status
+    if self.bomb?
+      #raise "You hit a BOMB!"
+      @game_board.bombed = true
+    end
+  end
+  
   def hidden?
     !(@flagged) && !(@revealed)
   end
   
-  def symbol
+  def symbol(with_bombs=false)
+    return "B" if bomb? if with_bombs
     return "*" if hidden?
     return "F" if flagged?
     @neighbor_bomb_count > 0 ? @neighbor_bomb_count.to_s : "_"
   end
   
+end
+
+if $PROGRAM_NAME == __FILE__
+  a = Game.new
+  a.run
 end
