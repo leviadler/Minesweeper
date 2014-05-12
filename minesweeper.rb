@@ -290,10 +290,13 @@ class Tile
   end
   
   def revealed=(status)
-    @revealed = status
-    if self.bomb?
+    if self.flagged?
+      puts "Unflag to reveal this tile"
+    elsif self.bomb?
       #raise "You hit a BOMB!"
       @game_board.bombed = true
+    else
+      @revealed = status
     end
   end
   
