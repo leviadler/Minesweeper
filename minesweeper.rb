@@ -5,9 +5,22 @@ class Game
 end
 
 class Board
+  #for testing
+  attr_reader :board
+  
   def initialize(width=9, height=9, total_bombs=10)
     @width, @height, @total_bombs = width, height, total_bombs
     build_board
+  end
+  
+  def display_board
+    #
+    @height.times do |x|
+      @width.times do |y|
+        print @board[x][y].symbol + ' '
+      end
+      print "\n"
+    end
   end
   
   def build_board
@@ -26,7 +39,7 @@ class Board
     
     set_neighbor_bomb_counts
     
-    p @board
+    display_board
     
   end
   
@@ -92,17 +105,37 @@ class Tile
   
   attr_reader :coords
   attr_accessor :neighbors, :neighbor_bomb_count
-  attr_writer :bomb
+  attr_writer :bomb, :flagged, :revealed
   
   def initialize(coords)
     @coords = coords
     @bomb = false
     @neighbors = []
     @neighbor_bomb_count = 0
+    @flagged = false
+    @revealed = false
   end
   
   def bomb?
     @bomb
+  end
+  
+  def flagged?
+    @flagged
+  end
+  
+  def revealed?
+    @revealed
+  end
+  
+  def hidden?
+    !(@flagged) && !(@revealed)
+  end
+  
+  def symbol
+    return "*" if hidden?
+    return "F" if flagged?
+    @neighbor_bomb_count > 0 ? @neighbor_bomb_count.to_s : "_"
   end
   
 end
