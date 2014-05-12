@@ -12,6 +12,7 @@ class Game
     @game_board = Board.new if level == 1
     @game_board = Board.new(16,16,40) if level == 2
     @game_board = Board.new(30,16,99) if level == 3
+    load_game if level == 4
     
   end
   
@@ -20,14 +21,13 @@ class Game
     puts "1) Easy (9x9)"
     puts "2) Intermediate (16x16)"
     puts "3) Expert (16x30)"
-    puts
     puts "4) Load Previous Game"
     print "==> "
     
     level = gets.chomp.to_i
     
-    until level.between?(1,3)
-      puts "Invalid input. Please choose a number between 1-3, inclusive."
+    until level.between?(1,4)
+      puts "Invalid input. Please choose a number between 1-4, inclusive."
       print "==> "
       level = gets.chomp.to_i
     end
@@ -50,30 +50,26 @@ class Game
       
       action = get_user_action
       
-      if action == FLAGGED_ACTION
-        if @game_board.board[row][col].flagged?
-          @game_board.board[row][col].flagged = false
-        else
-          @game_board.board[row][col].flagged = true
-        end
-      elsif action == REVEAL_ACTION
-        tile = @game_board.board[row][col]
-        tile.revealed = true
-        @game_board.reveal_neighbors(tile)
-      end
+      apply_action(action, row, col)
         
-      
       @game_board.display_board
     end
     
-    if !@game_board.bombed?
-      puts "Yay! :)"
-    else
-      puts "GAME OVER"
-    end
+    !@game_board.bombed? ? (puts "Yay! :)") : (puts "GAME OVER")
     
     @game_board.display_board(true)
     
+  end
+  
+  require 'yaml'
+  def load_game
+    
+  end
+  
+  def save_game
+    File.open('saved_game.yaml','w') do |f|
+      f.print @game_board.to_yaml
+    end
   end
   
   def get_user_coords
@@ -94,9 +90,16 @@ class Game
   end
   
   def prompt_for_coords
-    puts "Please enter the row of your desired tile:"
+    puts "Please enter the row of your desired tile or save to save and quit:"
     print "==>"
-    row = Integer(gets.chomp)
+    input = gets.chomp
+    
+    if input.downcase == "save"
+      save_game
+      exit
+    end
+    
+    row = Integer(input)
  
     puts "Please enter the col of your desired tile:"
     print "==>"
@@ -115,6 +118,21 @@ class Game
       action = gets.chomp.to_i
     end
     action
+  end
+  
+  def apply_action(action, row, col)
+    
+    if action == FLAGGED_ACTION
+      if @game_board.board[row][col].flagged?
+        @game_board.board[row][col].flagged = false
+      else
+        @game_board.board[row][col].flagged = true
+      end
+    elsif action == REVEAL_ACTION
+      tile = @game_board.board[row][col]
+      tile.revealed = true
+      @game_board.reveal_neighbors(tile)
+    end
   end
   
 # end game class

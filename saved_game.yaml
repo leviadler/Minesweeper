@@ -1,0 +1,1901 @@
+--- &1 !ruby/object:Board
+total_bombs: 10
+height: 9
+width: 9
+board:
+- - !ruby/object:Tile
+    game_board: *1
+    coords:
+    - 0
+    - 0
+    bomb: false
+    neighbors:
+    - - 1
+      - 0
+    - - 0
+      - 1
+    - - 1
+      - 1
+    neighbor_bomb_count: 0
+    flagged: false
+    revealed: true
+  - !ruby/object:Tile
+    game_board: *1
+    coords:
+    - 0
+    - 1
+    bomb: false
+    neighbors:
+    - - 0
+      - 0
+    - - 1
+      - 0
+    - - 1
+      - 1
+    - - 0
+      - 2
+    - - 1
+      - 2
+    neighbor_bomb_count: 0
+    flagged: false
+    revealed: true
+  - !ruby/object:Tile
+    game_board: *1
+    coords:
+    - 0
+    - 2
+    bomb: false
+    neighbors:
+    - - 0
+      - 1
+    - - 1
+      - 1
+    - - 1
+      - 2
+    - - 0
+      - 3
+    - - 1
+      - 3
+    neighbor_bomb_count: 0
+    flagged: false
+    revealed: true
+  - !ruby/object:Tile
+    game_board: *1
+    coords:
+    - 0
+    - 3
+    bomb: false
+    neighbors:
+    - - 0
+      - 2
+    - - 1
+      - 2
+    - - 1
+      - 3
+    - - 0
+      - 4
+    - - 1
+      - 4
+    neighbor_bomb_count: 0
+    flagged: false
+    revealed: true
+  - !ruby/object:Tile
+    game_board: *1
+    coords:
+    - 0
+    - 4
+    bomb: false
+    neighbors:
+    - - 0
+      - 3
+    - - 1
+      - 3
+    - - 1
+      - 4
+    - - 0
+      - 5
+    - - 1
+      - 5
+    neighbor_bomb_count: 0
+    flagged: false
+    revealed: true
+  - !ruby/object:Tile
+    game_board: *1
+    coords:
+    - 0
+    - 5
+    bomb: false
+    neighbors:
+    - - 0
+      - 4
+    - - 1
+      - 4
+    - - 1
+      - 5
+    - - 0
+      - 6
+    - - 1
+      - 6
+    neighbor_bomb_count: 0
+    flagged: false
+    revealed: true
+  - !ruby/object:Tile
+    game_board: *1
+    coords:
+    - 0
+    - 6
+    bomb: false
+    neighbors:
+    - - 0
+      - 5
+    - - 1
+      - 5
+    - - 1
+      - 6
+    - - 0
+      - 7
+    - - 1
+      - 7
+    neighbor_bomb_count: 0
+    flagged: false
+    revealed: true
+  - !ruby/object:Tile
+    game_board: *1
+    coords:
+    - 0
+    - 7
+    bomb: false
+    neighbors:
+    - - 0
+      - 6
+    - - 1
+      - 6
+    - - 1
+      - 7
+    - - 0
+      - 8
+    - - 1
+      - 8
+    neighbor_bomb_count: 0
+    flagged: false
+    revealed: true
+  - !ruby/object:Tile
+    game_board: *1
+    coords:
+    - 0
+    - 8
+    bomb: false
+    neighbors:
+    - - 0
+      - 7
+    - - 1
+      - 7
+    - - 1
+      - 8
+    neighbor_bomb_count: 0
+    flagged: false
+    revealed: true
+- - !ruby/object:Tile
+    game_board: *1
+    coords:
+    - 1
+    - 0
+    bomb: false
+    neighbors:
+    - - 0
+      - 0
+    - - 2
+      - 0
+    - - 0
+      - 1
+    - - 1
+      - 1
+    - - 2
+      - 1
+    neighbor_bomb_count: 1
+    flagged: false
+    revealed: true
+  - !ruby/object:Tile
+    game_board: *1
+    coords:
+    - 1
+    - 1
+    bomb: false
+    neighbors:
+    - - 0
+      - 0
+    - - 1
+      - 0
+    - - 2
+      - 0
+    - - 0
+      - 1
+    - - 2
+      - 1
+    - - 0
+      - 2
+    - - 1
+      - 2
+    - - 2
+      - 2
+    neighbor_bomb_count: 1
+    flagged: false
+    revealed: true
+  - !ruby/object:Tile
+    game_board: *1
+    coords:
+    - 1
+    - 2
+    bomb: false
+    neighbors:
+    - - 0
+      - 1
+    - - 1
+      - 1
+    - - 2
+      - 1
+    - - 0
+      - 2
+    - - 2
+      - 2
+    - - 0
+      - 3
+    - - 1
+      - 3
+    - - 2
+      - 3
+    neighbor_bomb_count: 1
+    flagged: false
+    revealed: true
+  - !ruby/object:Tile
+    game_board: *1
+    coords:
+    - 1
+    - 3
+    bomb: false
+    neighbors:
+    - - 0
+      - 2
+    - - 1
+      - 2
+    - - 2
+      - 2
+    - - 0
+      - 3
+    - - 2
+      - 3
+    - - 0
+      - 4
+    - - 1
+      - 4
+    - - 2
+      - 4
+    neighbor_bomb_count: 1
+    flagged: false
+    revealed: true
+  - !ruby/object:Tile
+    game_board: *1
+    coords:
+    - 1
+    - 4
+    bomb: false
+    neighbors:
+    - - 0
+      - 3
+    - - 1
+      - 3
+    - - 2
+      - 3
+    - - 0
+      - 4
+    - - 2
+      - 4
+    - - 0
+      - 5
+    - - 1
+      - 5
+    - - 2
+      - 5
+    neighbor_bomb_count: 2
+    flagged: false
+    revealed: true
+  - !ruby/object:Tile
+    game_board: *1
+    coords:
+    - 1
+    - 5
+    bomb: false
+    neighbors:
+    - - 0
+      - 4
+    - - 1
+      - 4
+    - - 2
+      - 4
+    - - 0
+      - 5
+    - - 2
+      - 5
+    - - 0
+      - 6
+    - - 1
+      - 6
+    - - 2
+      - 6
+    neighbor_bomb_count: 1
+    flagged: false
+    revealed: true
+  - !ruby/object:Tile
+    game_board: *1
+    coords:
+    - 1
+    - 6
+    bomb: false
+    neighbors:
+    - - 0
+      - 5
+    - - 1
+      - 5
+    - - 2
+      - 5
+    - - 0
+      - 6
+    - - 2
+      - 6
+    - - 0
+      - 7
+    - - 1
+      - 7
+    - - 2
+      - 7
+    neighbor_bomb_count: 1
+    flagged: false
+    revealed: true
+  - !ruby/object:Tile
+    game_board: *1
+    coords:
+    - 1
+    - 7
+    bomb: false
+    neighbors:
+    - - 0
+      - 6
+    - - 1
+      - 6
+    - - 2
+      - 6
+    - - 0
+      - 7
+    - - 2
+      - 7
+    - - 0
+      - 8
+    - - 1
+      - 8
+    - - 2
+      - 8
+    neighbor_bomb_count: 0
+    flagged: false
+    revealed: true
+  - !ruby/object:Tile
+    game_board: *1
+    coords:
+    - 1
+    - 8
+    bomb: false
+    neighbors:
+    - - 0
+      - 7
+    - - 1
+      - 7
+    - - 2
+      - 7
+    - - 0
+      - 8
+    - - 2
+      - 8
+    neighbor_bomb_count: 0
+    flagged: false
+    revealed: true
+- - !ruby/object:Tile
+    game_board: *1
+    coords:
+    - 2
+    - 0
+    bomb: true
+    neighbors:
+    - - 1
+      - 0
+    - - 3
+      - 0
+    - - 1
+      - 1
+    - - 2
+      - 1
+    - - 3
+      - 1
+    neighbor_bomb_count: 0
+    flagged: false
+    revealed: false
+  - !ruby/object:Tile
+    game_board: *1
+    coords:
+    - 2
+    - 1
+    bomb: false
+    neighbors:
+    - - 1
+      - 0
+    - - 2
+      - 0
+    - - 3
+      - 0
+    - - 1
+      - 1
+    - - 3
+      - 1
+    - - 1
+      - 2
+    - - 2
+      - 2
+    - - 3
+      - 2
+    neighbor_bomb_count: 1
+    flagged: false
+    revealed: false
+  - !ruby/object:Tile
+    game_board: *1
+    coords:
+    - 2
+    - 2
+    bomb: false
+    neighbors:
+    - - 1
+      - 1
+    - - 2
+      - 1
+    - - 3
+      - 1
+    - - 1
+      - 2
+    - - 3
+      - 2
+    - - 1
+      - 3
+    - - 2
+      - 3
+    - - 3
+      - 3
+    neighbor_bomb_count: 1
+    flagged: false
+    revealed: false
+  - !ruby/object:Tile
+    game_board: *1
+    coords:
+    - 2
+    - 3
+    bomb: true
+    neighbors:
+    - - 1
+      - 2
+    - - 2
+      - 2
+    - - 3
+      - 2
+    - - 1
+      - 3
+    - - 3
+      - 3
+    - - 1
+      - 4
+    - - 2
+      - 4
+    - - 3
+      - 4
+    neighbor_bomb_count: 0
+    flagged: false
+    revealed: false
+  - !ruby/object:Tile
+    game_board: *1
+    coords:
+    - 2
+    - 4
+    bomb: false
+    neighbors:
+    - - 1
+      - 3
+    - - 2
+      - 3
+    - - 3
+      - 3
+    - - 1
+      - 4
+    - - 3
+      - 4
+    - - 1
+      - 5
+    - - 2
+      - 5
+    - - 3
+      - 5
+    neighbor_bomb_count: 2
+    flagged: false
+    revealed: false
+  - !ruby/object:Tile
+    game_board: *1
+    coords:
+    - 2
+    - 5
+    bomb: true
+    neighbors:
+    - - 1
+      - 4
+    - - 2
+      - 4
+    - - 3
+      - 4
+    - - 1
+      - 5
+    - - 3
+      - 5
+    - - 1
+      - 6
+    - - 2
+      - 6
+    - - 3
+      - 6
+    neighbor_bomb_count: 0
+    flagged: false
+    revealed: false
+  - !ruby/object:Tile
+    game_board: *1
+    coords:
+    - 2
+    - 6
+    bomb: false
+    neighbors:
+    - - 1
+      - 5
+    - - 2
+      - 5
+    - - 3
+      - 5
+    - - 1
+      - 6
+    - - 3
+      - 6
+    - - 1
+      - 7
+    - - 2
+      - 7
+    - - 3
+      - 7
+    neighbor_bomb_count: 1
+    flagged: false
+    revealed: true
+  - !ruby/object:Tile
+    game_board: *1
+    coords:
+    - 2
+    - 7
+    bomb: false
+    neighbors:
+    - - 1
+      - 6
+    - - 2
+      - 6
+    - - 3
+      - 6
+    - - 1
+      - 7
+    - - 3
+      - 7
+    - - 1
+      - 8
+    - - 2
+      - 8
+    - - 3
+      - 8
+    neighbor_bomb_count: 0
+    flagged: false
+    revealed: true
+  - !ruby/object:Tile
+    game_board: *1
+    coords:
+    - 2
+    - 8
+    bomb: false
+    neighbors:
+    - - 1
+      - 7
+    - - 2
+      - 7
+    - - 3
+      - 7
+    - - 1
+      - 8
+    - - 3
+      - 8
+    neighbor_bomb_count: 0
+    flagged: false
+    revealed: true
+- - !ruby/object:Tile
+    game_board: *1
+    coords:
+    - 3
+    - 0
+    bomb: false
+    neighbors:
+    - - 2
+      - 0
+    - - 4
+      - 0
+    - - 2
+      - 1
+    - - 3
+      - 1
+    - - 4
+      - 1
+    neighbor_bomb_count: 3
+    flagged: false
+    revealed: false
+  - !ruby/object:Tile
+    game_board: *1
+    coords:
+    - 3
+    - 1
+    bomb: false
+    neighbors:
+    - - 2
+      - 0
+    - - 3
+      - 0
+    - - 4
+      - 0
+    - - 2
+      - 1
+    - - 4
+      - 1
+    - - 2
+      - 2
+    - - 3
+      - 2
+    - - 4
+      - 2
+    neighbor_bomb_count: 3
+    flagged: false
+    revealed: false
+  - !ruby/object:Tile
+    game_board: *1
+    coords:
+    - 3
+    - 2
+    bomb: false
+    neighbors:
+    - - 2
+      - 1
+    - - 3
+      - 1
+    - - 4
+      - 1
+    - - 2
+      - 2
+    - - 4
+      - 2
+    - - 2
+      - 3
+    - - 3
+      - 3
+    - - 4
+      - 3
+    neighbor_bomb_count: 2
+    flagged: false
+    revealed: false
+  - !ruby/object:Tile
+    game_board: *1
+    coords:
+    - 3
+    - 3
+    bomb: false
+    neighbors:
+    - - 2
+      - 2
+    - - 3
+      - 2
+    - - 4
+      - 2
+    - - 2
+      - 3
+    - - 4
+      - 3
+    - - 2
+      - 4
+    - - 3
+      - 4
+    - - 4
+      - 4
+    neighbor_bomb_count: 1
+    flagged: false
+    revealed: true
+  - !ruby/object:Tile
+    game_board: *1
+    coords:
+    - 3
+    - 4
+    bomb: false
+    neighbors:
+    - - 2
+      - 3
+    - - 3
+      - 3
+    - - 4
+      - 3
+    - - 2
+      - 4
+    - - 4
+      - 4
+    - - 2
+      - 5
+    - - 3
+      - 5
+    - - 4
+      - 5
+    neighbor_bomb_count: 2
+    flagged: false
+    revealed: true
+  - !ruby/object:Tile
+    game_board: *1
+    coords:
+    - 3
+    - 5
+    bomb: false
+    neighbors:
+    - - 2
+      - 4
+    - - 3
+      - 4
+    - - 4
+      - 4
+    - - 2
+      - 5
+    - - 4
+      - 5
+    - - 2
+      - 6
+    - - 3
+      - 6
+    - - 4
+      - 6
+    neighbor_bomb_count: 1
+    flagged: false
+    revealed: true
+  - !ruby/object:Tile
+    game_board: *1
+    coords:
+    - 3
+    - 6
+    bomb: false
+    neighbors:
+    - - 2
+      - 5
+    - - 3
+      - 5
+    - - 4
+      - 5
+    - - 2
+      - 6
+    - - 4
+      - 6
+    - - 2
+      - 7
+    - - 3
+      - 7
+    - - 4
+      - 7
+    neighbor_bomb_count: 1
+    flagged: false
+    revealed: true
+  - !ruby/object:Tile
+    game_board: *1
+    coords:
+    - 3
+    - 7
+    bomb: false
+    neighbors:
+    - - 2
+      - 6
+    - - 3
+      - 6
+    - - 4
+      - 6
+    - - 2
+      - 7
+    - - 4
+      - 7
+    - - 2
+      - 8
+    - - 3
+      - 8
+    - - 4
+      - 8
+    neighbor_bomb_count: 0
+    flagged: false
+    revealed: true
+  - !ruby/object:Tile
+    game_board: *1
+    coords:
+    - 3
+    - 8
+    bomb: false
+    neighbors:
+    - - 2
+      - 7
+    - - 3
+      - 7
+    - - 4
+      - 7
+    - - 2
+      - 8
+    - - 4
+      - 8
+    neighbor_bomb_count: 0
+    flagged: false
+    revealed: true
+- - !ruby/object:Tile
+    game_board: *1
+    coords:
+    - 4
+    - 0
+    bomb: true
+    neighbors:
+    - - 3
+      - 0
+    - - 5
+      - 0
+    - - 3
+      - 1
+    - - 4
+      - 1
+    - - 5
+      - 1
+    neighbor_bomb_count: 2
+    flagged: false
+    revealed: false
+  - !ruby/object:Tile
+    game_board: *1
+    coords:
+    - 4
+    - 1
+    bomb: true
+    neighbors:
+    - - 3
+      - 0
+    - - 4
+      - 0
+    - - 5
+      - 0
+    - - 3
+      - 1
+    - - 5
+      - 1
+    - - 3
+      - 2
+    - - 4
+      - 2
+    - - 5
+      - 2
+    neighbor_bomb_count: 3
+    flagged: false
+    revealed: false
+  - !ruby/object:Tile
+    game_board: *1
+    coords:
+    - 4
+    - 2
+    bomb: false
+    neighbors:
+    - - 3
+      - 1
+    - - 4
+      - 1
+    - - 5
+      - 1
+    - - 3
+      - 2
+    - - 5
+      - 2
+    - - 3
+      - 3
+    - - 4
+      - 3
+    - - 5
+      - 3
+    neighbor_bomb_count: 2
+    flagged: false
+    revealed: false
+  - !ruby/object:Tile
+    game_board: *1
+    coords:
+    - 4
+    - 3
+    bomb: false
+    neighbors:
+    - - 3
+      - 2
+    - - 4
+      - 2
+    - - 5
+      - 2
+    - - 3
+      - 3
+    - - 5
+      - 3
+    - - 3
+      - 4
+    - - 4
+      - 4
+    - - 5
+      - 4
+    neighbor_bomb_count: 1
+    flagged: false
+    revealed: true
+  - !ruby/object:Tile
+    game_board: *1
+    coords:
+    - 4
+    - 4
+    bomb: false
+    neighbors:
+    - - 3
+      - 3
+    - - 4
+      - 3
+    - - 5
+      - 3
+    - - 3
+      - 4
+    - - 5
+      - 4
+    - - 3
+      - 5
+    - - 4
+      - 5
+    - - 5
+      - 5
+    neighbor_bomb_count: 0
+    flagged: false
+    revealed: true
+  - !ruby/object:Tile
+    game_board: *1
+    coords:
+    - 4
+    - 5
+    bomb: false
+    neighbors:
+    - - 3
+      - 4
+    - - 4
+      - 4
+    - - 5
+      - 4
+    - - 3
+      - 5
+    - - 5
+      - 5
+    - - 3
+      - 6
+    - - 4
+      - 6
+    - - 5
+      - 6
+    neighbor_bomb_count: 0
+    flagged: false
+    revealed: true
+  - !ruby/object:Tile
+    game_board: *1
+    coords:
+    - 4
+    - 6
+    bomb: false
+    neighbors:
+    - - 3
+      - 5
+    - - 4
+      - 5
+    - - 5
+      - 5
+    - - 3
+      - 6
+    - - 5
+      - 6
+    - - 3
+      - 7
+    - - 4
+      - 7
+    - - 5
+      - 7
+    neighbor_bomb_count: 0
+    flagged: false
+    revealed: true
+  - !ruby/object:Tile
+    game_board: *1
+    coords:
+    - 4
+    - 7
+    bomb: false
+    neighbors:
+    - - 3
+      - 6
+    - - 4
+      - 6
+    - - 5
+      - 6
+    - - 3
+      - 7
+    - - 5
+      - 7
+    - - 3
+      - 8
+    - - 4
+      - 8
+    - - 5
+      - 8
+    neighbor_bomb_count: 0
+    flagged: false
+    revealed: true
+  - !ruby/object:Tile
+    game_board: *1
+    coords:
+    - 4
+    - 8
+    bomb: false
+    neighbors:
+    - - 3
+      - 7
+    - - 4
+      - 7
+    - - 5
+      - 7
+    - - 3
+      - 8
+    - - 5
+      - 8
+    neighbor_bomb_count: 0
+    flagged: false
+    revealed: true
+- - !ruby/object:Tile
+    game_board: *1
+    coords:
+    - 5
+    - 0
+    bomb: true
+    neighbors:
+    - - 4
+      - 0
+    - - 6
+      - 0
+    - - 4
+      - 1
+    - - 5
+      - 1
+    - - 6
+      - 1
+    neighbor_bomb_count: 2
+    flagged: false
+    revealed: false
+  - !ruby/object:Tile
+    game_board: *1
+    coords:
+    - 5
+    - 1
+    bomb: false
+    neighbors:
+    - - 4
+      - 0
+    - - 5
+      - 0
+    - - 6
+      - 0
+    - - 4
+      - 1
+    - - 6
+      - 1
+    - - 4
+      - 2
+    - - 5
+      - 2
+    - - 6
+      - 2
+    neighbor_bomb_count: 4
+    flagged: false
+    revealed: false
+  - !ruby/object:Tile
+    game_board: *1
+    coords:
+    - 5
+    - 2
+    bomb: true
+    neighbors:
+    - - 4
+      - 1
+    - - 5
+      - 1
+    - - 6
+      - 1
+    - - 4
+      - 2
+    - - 6
+      - 2
+    - - 4
+      - 3
+    - - 5
+      - 3
+    - - 6
+      - 3
+    neighbor_bomb_count: 1
+    flagged: false
+    revealed: false
+  - !ruby/object:Tile
+    game_board: *1
+    coords:
+    - 5
+    - 3
+    bomb: false
+    neighbors:
+    - - 4
+      - 2
+    - - 5
+      - 2
+    - - 6
+      - 2
+    - - 4
+      - 3
+    - - 6
+      - 3
+    - - 4
+      - 4
+    - - 5
+      - 4
+    - - 6
+      - 4
+    neighbor_bomb_count: 1
+    flagged: false
+    revealed: true
+  - !ruby/object:Tile
+    game_board: *1
+    coords:
+    - 5
+    - 4
+    bomb: false
+    neighbors:
+    - - 4
+      - 3
+    - - 5
+      - 3
+    - - 6
+      - 3
+    - - 4
+      - 4
+    - - 6
+      - 4
+    - - 4
+      - 5
+    - - 5
+      - 5
+    - - 6
+      - 5
+    neighbor_bomb_count: 0
+    flagged: false
+    revealed: true
+  - !ruby/object:Tile
+    game_board: *1
+    coords:
+    - 5
+    - 5
+    bomb: false
+    neighbors:
+    - - 5
+      - 4
+    - - 6
+      - 4
+    - - 4
+      - 5
+    - - 6
+      - 5
+    - - 4
+      - 6
+    - - 5
+      - 6
+    - - 6
+      - 6
+    neighbor_bomb_count: 0
+    flagged: false
+    revealed: true
+  - !ruby/object:Tile
+    game_board: *1
+    coords:
+    - 5
+    - 6
+    bomb: false
+    neighbors:
+    - - 4
+      - 5
+    - - 5
+      - 5
+    - - 6
+      - 5
+    - - 4
+      - 6
+    - - 6
+      - 6
+    - - 4
+      - 7
+    - - 5
+      - 7
+    - - 6
+      - 7
+    neighbor_bomb_count: 1
+    flagged: false
+    revealed: true
+  - !ruby/object:Tile
+    game_board: *1
+    coords:
+    - 5
+    - 7
+    bomb: false
+    neighbors:
+    - - 4
+      - 6
+    - - 5
+      - 6
+    - - 6
+      - 6
+    - - 4
+      - 7
+    - - 6
+      - 7
+    - - 4
+      - 8
+    - - 5
+      - 8
+    - - 6
+      - 8
+    neighbor_bomb_count: 1
+    flagged: false
+    revealed: true
+  - !ruby/object:Tile
+    game_board: *1
+    coords:
+    - 5
+    - 8
+    bomb: false
+    neighbors:
+    - - 4
+      - 7
+    - - 5
+      - 7
+    - - 6
+      - 7
+    - - 4
+      - 8
+    - - 6
+      - 8
+    neighbor_bomb_count: 1
+    flagged: false
+    revealed: true
+- - !ruby/object:Tile
+    game_board: *1
+    coords:
+    - 6
+    - 0
+    bomb: false
+    neighbors:
+    - - 5
+      - 0
+    - - 7
+      - 0
+    - - 5
+      - 1
+    - - 6
+      - 1
+    - - 7
+      - 1
+    neighbor_bomb_count: 2
+    flagged: false
+    revealed: false
+  - !ruby/object:Tile
+    game_board: *1
+    coords:
+    - 6
+    - 1
+    bomb: false
+    neighbors:
+    - - 5
+      - 0
+    - - 6
+      - 0
+    - - 7
+      - 0
+    - - 5
+      - 1
+    - - 7
+      - 1
+    - - 5
+      - 2
+    - - 6
+      - 2
+    - - 7
+      - 2
+    neighbor_bomb_count: 3
+    flagged: false
+    revealed: false
+  - !ruby/object:Tile
+    game_board: *1
+    coords:
+    - 6
+    - 2
+    bomb: false
+    neighbors:
+    - - 5
+      - 1
+    - - 6
+      - 1
+    - - 7
+      - 1
+    - - 5
+      - 2
+    - - 7
+      - 2
+    - - 5
+      - 3
+    - - 6
+      - 3
+    - - 7
+      - 3
+    neighbor_bomb_count: 1
+    flagged: false
+    revealed: false
+  - !ruby/object:Tile
+    game_board: *1
+    coords:
+    - 6
+    - 3
+    bomb: false
+    neighbors:
+    - - 5
+      - 2
+    - - 6
+      - 2
+    - - 7
+      - 2
+    - - 5
+      - 3
+    - - 7
+      - 3
+    - - 5
+      - 4
+    - - 6
+      - 4
+    - - 7
+      - 4
+    neighbor_bomb_count: 1
+    flagged: false
+    revealed: true
+  - !ruby/object:Tile
+    game_board: *1
+    coords:
+    - 6
+    - 4
+    bomb: false
+    neighbors:
+    - - 5
+      - 3
+    - - 6
+      - 3
+    - - 7
+      - 3
+    - - 5
+      - 4
+    - - 7
+      - 4
+    - - 5
+      - 5
+    - - 6
+      - 5
+    - - 7
+      - 5
+    neighbor_bomb_count: 0
+    flagged: false
+    revealed: true
+  - !ruby/object:Tile
+    game_board: *1
+    coords:
+    - 6
+    - 5
+    bomb: false
+    neighbors:
+    - - 5
+      - 4
+    - - 6
+      - 4
+    - - 7
+      - 4
+    - - 5
+      - 5
+    - - 7
+      - 5
+    - - 5
+      - 6
+    - - 6
+      - 6
+    - - 7
+      - 6
+    neighbor_bomb_count: 0
+    flagged: false
+    revealed: true
+  - !ruby/object:Tile
+    game_board: *1
+    coords:
+    - 6
+    - 6
+    bomb: false
+    neighbors:
+    - - 5
+      - 5
+    - - 6
+      - 5
+    - - 7
+      - 5
+    - - 5
+      - 6
+    - - 7
+      - 6
+    - - 5
+      - 7
+    - - 6
+      - 7
+    - - 7
+      - 7
+    neighbor_bomb_count: 1
+    flagged: false
+    revealed: true
+  - !ruby/object:Tile
+    game_board: *1
+    coords:
+    - 6
+    - 7
+    bomb: true
+    neighbors:
+    - - 5
+      - 6
+    - - 6
+      - 6
+    - - 7
+      - 6
+    - - 5
+      - 7
+    - - 7
+      - 7
+    - - 5
+      - 8
+    - - 6
+      - 8
+    - - 7
+      - 8
+    neighbor_bomb_count: 0
+    flagged: false
+    revealed: false
+  - !ruby/object:Tile
+    game_board: *1
+    coords:
+    - 6
+    - 8
+    bomb: false
+    neighbors:
+    - - 5
+      - 7
+    - - 6
+      - 7
+    - - 7
+      - 7
+    - - 5
+      - 8
+    - - 7
+      - 8
+    neighbor_bomb_count: 1
+    flagged: false
+    revealed: false
+- - !ruby/object:Tile
+    game_board: *1
+    coords:
+    - 7
+    - 0
+    bomb: true
+    neighbors:
+    - - 6
+      - 0
+    - - 8
+      - 0
+    - - 6
+      - 1
+    - - 7
+      - 1
+    - - 8
+      - 1
+    neighbor_bomb_count: 0
+    flagged: false
+    revealed: false
+  - !ruby/object:Tile
+    game_board: *1
+    coords:
+    - 7
+    - 1
+    bomb: false
+    neighbors:
+    - - 6
+      - 0
+    - - 7
+      - 0
+    - - 8
+      - 0
+    - - 6
+      - 1
+    - - 8
+      - 1
+    - - 6
+      - 2
+    - - 7
+      - 2
+    - - 8
+      - 2
+    neighbor_bomb_count: 1
+    flagged: false
+    revealed: false
+  - !ruby/object:Tile
+    game_board: *1
+    coords:
+    - 7
+    - 2
+    bomb: false
+    neighbors:
+    - - 6
+      - 1
+    - - 7
+      - 1
+    - - 8
+      - 1
+    - - 6
+      - 2
+    - - 8
+      - 2
+    - - 6
+      - 3
+    - - 7
+      - 3
+    - - 8
+      - 3
+    neighbor_bomb_count: 1
+    flagged: false
+    revealed: false
+  - !ruby/object:Tile
+    game_board: *1
+    coords:
+    - 7
+    - 3
+    bomb: false
+    neighbors:
+    - - 6
+      - 2
+    - - 7
+      - 2
+    - - 8
+      - 2
+    - - 6
+      - 3
+    - - 8
+      - 3
+    - - 6
+      - 4
+    - - 7
+      - 4
+    - - 8
+      - 4
+    neighbor_bomb_count: 1
+    flagged: false
+    revealed: true
+  - !ruby/object:Tile
+    game_board: *1
+    coords:
+    - 7
+    - 4
+    bomb: false
+    neighbors:
+    - - 6
+      - 3
+    - - 7
+      - 3
+    - - 8
+      - 3
+    - - 6
+      - 4
+    - - 8
+      - 4
+    - - 6
+      - 5
+    - - 7
+      - 5
+    - - 8
+      - 5
+    neighbor_bomb_count: 1
+    flagged: false
+    revealed: true
+  - !ruby/object:Tile
+    game_board: *1
+    coords:
+    - 7
+    - 5
+    bomb: false
+    neighbors:
+    - - 6
+      - 4
+    - - 7
+      - 4
+    - - 8
+      - 4
+    - - 6
+      - 5
+    - - 8
+      - 5
+    - - 6
+      - 6
+    - - 7
+      - 6
+    - - 8
+      - 6
+    neighbor_bomb_count: 0
+    flagged: false
+    revealed: true
+  - !ruby/object:Tile
+    game_board: *1
+    coords:
+    - 7
+    - 6
+    bomb: false
+    neighbors:
+    - - 6
+      - 5
+    - - 7
+      - 5
+    - - 8
+      - 5
+    - - 6
+      - 6
+    - - 8
+      - 6
+    - - 6
+      - 7
+    - - 7
+      - 7
+    - - 8
+      - 7
+    neighbor_bomb_count: 1
+    flagged: false
+    revealed: true
+  - !ruby/object:Tile
+    game_board: *1
+    coords:
+    - 7
+    - 7
+    bomb: false
+    neighbors:
+    - - 6
+      - 6
+    - - 7
+      - 6
+    - - 8
+      - 6
+    - - 6
+      - 7
+    - - 8
+      - 7
+    - - 6
+      - 8
+    - - 7
+      - 8
+    - - 8
+      - 8
+    neighbor_bomb_count: 1
+    flagged: false
+    revealed: true
+  - !ruby/object:Tile
+    game_board: *1
+    coords:
+    - 7
+    - 8
+    bomb: false
+    neighbors:
+    - - 6
+      - 7
+    - - 7
+      - 7
+    - - 8
+      - 7
+    - - 6
+      - 8
+    - - 8
+      - 8
+    neighbor_bomb_count: 1
+    flagged: false
+    revealed: true
+- - !ruby/object:Tile
+    game_board: *1
+    coords:
+    - 8
+    - 0
+    bomb: false
+    neighbors:
+    - - 7
+      - 0
+    - - 7
+      - 1
+    - - 8
+      - 1
+    neighbor_bomb_count: 1
+    flagged: false
+    revealed: false
+  - !ruby/object:Tile
+    game_board: *1
+    coords:
+    - 8
+    - 1
+    bomb: false
+    neighbors:
+    - - 7
+      - 0
+    - - 8
+      - 0
+    - - 7
+      - 1
+    - - 7
+      - 2
+    - - 8
+      - 2
+    neighbor_bomb_count: 1
+    flagged: false
+    revealed: false
+  - !ruby/object:Tile
+    game_board: *1
+    coords:
+    - 8
+    - 2
+    bomb: false
+    neighbors:
+    - - 7
+      - 1
+    - - 8
+      - 1
+    - - 7
+      - 2
+    - - 7
+      - 3
+    - - 8
+      - 3
+    neighbor_bomb_count: 1
+    flagged: false
+    revealed: false
+  - !ruby/object:Tile
+    game_board: *1
+    coords:
+    - 8
+    - 3
+    bomb: true
+    neighbors:
+    - - 7
+      - 2
+    - - 8
+      - 2
+    - - 7
+      - 3
+    - - 7
+      - 4
+    - - 8
+      - 4
+    neighbor_bomb_count: 0
+    flagged: false
+    revealed: false
+  - !ruby/object:Tile
+    game_board: *1
+    coords:
+    - 8
+    - 4
+    bomb: false
+    neighbors:
+    - - 7
+      - 3
+    - - 8
+      - 3
+    - - 7
+      - 4
+    - - 7
+      - 5
+    - - 8
+      - 5
+    neighbor_bomb_count: 1
+    flagged: false
+    revealed: true
+  - !ruby/object:Tile
+    game_board: *1
+    coords:
+    - 8
+    - 5
+    bomb: false
+    neighbors:
+    - - 7
+      - 4
+    - - 8
+      - 4
+    - - 7
+      - 5
+    - - 7
+      - 6
+    - - 8
+      - 6
+    neighbor_bomb_count: 0
+    flagged: false
+    revealed: true
+  - !ruby/object:Tile
+    game_board: *1
+    coords:
+    - 8
+    - 6
+    bomb: false
+    neighbors:
+    - - 7
+      - 5
+    - - 8
+      - 5
+    - - 7
+      - 6
+    - - 7
+      - 7
+    - - 8
+      - 7
+    neighbor_bomb_count: 0
+    flagged: false
+    revealed: true
+  - !ruby/object:Tile
+    game_board: *1
+    coords:
+    - 8
+    - 7
+    bomb: false
+    neighbors:
+    - - 7
+      - 6
+    - - 8
+      - 6
+    - - 7
+      - 7
+    - - 7
+      - 8
+    - - 8
+      - 8
+    neighbor_bomb_count: 0
+    flagged: false
+    revealed: true
+  - !ruby/object:Tile
+    game_board: *1
+    coords:
+    - 8
+    - 8
+    bomb: false
+    neighbors:
+    - - 7
+      - 7
+    - - 8
+      - 7
+    - - 7
+      - 8
+    neighbor_bomb_count: 0
+    flagged: false
+    revealed: true
