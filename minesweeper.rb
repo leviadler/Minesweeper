@@ -1,3 +1,4 @@
+# encoding: utf-8
 class Game
   FLAGGED_ACTION = 2
   REVEAL_ACTION = 1
@@ -12,7 +13,7 @@ class Game
     @game_board = Board.new if level == 1
     @game_board = Board.new(16,16,40) if level == 2
     @game_board = Board.new(30,16,99) if level == 3
-    load_game if level == 4
+    @game_board = load_game if level == 4
     
   end
   
@@ -63,7 +64,12 @@ class Game
   
   require 'yaml'
   def load_game
-    
+    saved_game = YAML::load_file("saved_game.yaml")
+    unless saved_game && saved_game.is_a?(Board)
+      puts "No Saved Game!" 
+      exit
+    end
+    saved_game
   end
   
   def save_game
@@ -325,7 +331,7 @@ class Tile
   end
   
   def hidden?
-    !(@flagged) && !(@revealed)
+    !(flagged?) && !(revealed?)
   end
   
   def symbol(with_bombs=false)
