@@ -22,9 +22,9 @@ class Board
     
     build_neighbors
     
-    #seed_board
+    seed_board
     
-    #set_neighbor_bomb_counts
+    set_neighbor_bomb_counts
     
     p @board
     
@@ -65,9 +65,23 @@ class Board
       break if bomb_count == @height * @width
       # Get random coordinate
       x , y = rand(0...@width), rand(0...@height)
-      unless @board[x][y].bomb
+      unless @board[x][y].bomb?
         @board[x][y].bomb = true
         bomb_count += 1
+      end
+    end
+  end
+  
+  def set_neighbor_bomb_counts
+    @height.times do |x|
+      @width.times do |y|
+        tile = @board[x][y]
+        bomb_count = 0
+        tile.neighbors.each do |neighbor| 
+          neighbor_tile = @board[neighbor.first][neighbor.last]
+          bomb_count += 1 if neighbor_tile.bomb? 
+        end
+        tile.neighbor_bomb_count = bomb_count
       end
     end
   end
@@ -76,13 +90,19 @@ end
 
 class Tile
   
-  attr_reader :coords 
-  attr_accessor :bomb, :neighbors
+  attr_reader :coords
+  attr_accessor :neighbors, :neighbor_bomb_count
+  attr_writer :bomb
   
   def initialize(coords)
     @coords = coords
     @bomb = false
     @neighbors = []
+    @neighbor_bomb_count = 0
+  end
+  
+  def bomb?
+    @bomb
   end
   
 end
