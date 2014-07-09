@@ -1,7 +1,4 @@
-minesweeper
+Minesweeper
 ===========
 
-AppAcademy
-w2d1
-
-Levi Adler & Matthew Farmer
+A Ruby command-line implementation of the classic Minesweeper game with functionality to save and load a game.
